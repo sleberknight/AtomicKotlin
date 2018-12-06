@@ -1,12 +1,13 @@
 package objectsEverywhere3
 
-fun isPalindrome(s: String): Boolean = TODO()
+fun isPalindrome(s: String): Boolean = s == s.reversed()
 
 fun isPalIgnoreCase(s: String): Boolean =
-        TODO()
+        isPalindrome(s.toLowerCase())
 
 fun isPalIgnoreSpecial(s: String): Boolean {
-    TODO()
+    val lettersOnly = s.filter { it in 'a'..'z' || it in 'A'..'Z' }
+    return isPalIgnoreCase(lettersOnly)
 }
 
 fun main(args: Array<String>) {
