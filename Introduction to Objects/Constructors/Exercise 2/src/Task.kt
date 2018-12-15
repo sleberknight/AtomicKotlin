@@ -1,34 +1,41 @@
 package constructors2
 
-class Robot(/*TODO*/) {
+class Robot(private val gridSize: Int, var x: Int, var y: Int) {
+
+    private fun remainOrTeleport(coordinate: Int): Int {
+        val insideGrid = coordinate % gridSize
+        return if (insideGrid >= 0) insideGrid else (gridSize + insideGrid)
+    }
 
     fun goRight(steps: Int) {
-        TODO()
+        x += steps
+        x = remainOrTeleport(x)
     }
 
     fun goLeft(steps: Int) {
-        TODO()
+        x -= steps
+        x = remainOrTeleport(x)
     }
 
     fun goDown(steps: Int) {
-        TODO()
+        y += steps
+        y = remainOrTeleport(y)
     }
 
     fun goUp(steps: Int) {
-        TODO()
+        y -= steps
+        y = remainOrTeleport(y)
     }
 
-    fun getLocation(): String = TODO()
+    fun getLocation(): String = "($x,$y)"
 
-    /*Implement toString here*/
+    override fun toString(): String = "Robot(x=$x,y=$y)"
 }
 
-/*
 fun main(args: Array<String>) {
     val robot = Robot(10, 1, 1)
     println(robot)
 }
-*/
 /* Output:
 Robot(1,1)
 */

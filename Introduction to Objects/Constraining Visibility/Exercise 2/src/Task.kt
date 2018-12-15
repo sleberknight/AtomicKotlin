@@ -1,26 +1,48 @@
 package constrainingVisibility2
 
-class Robot(/*TODO*/) {
+class Robot(private val gridSize: Int, private var x: Int, private var y: Int) {
+
+    private fun remainOrTeleport(coordinate: Int): Int {
+        val insideGrid = coordinate % gridSize
+        return if (insideGrid >= 0) insideGrid else (gridSize + insideGrid)
+    }
 
     fun goRight(steps: Int) {
-        TODO()
+        if (invalidSteps(steps)) return
+        x += steps
+        x = remainOrTeleport(x)
     }
 
     fun goLeft(steps: Int) {
-        TODO()
+        if (invalidSteps(steps)) return
+        x -= steps
+        x = remainOrTeleport(x)
     }
 
     fun goDown(steps: Int) {
-        TODO()
+        if (invalidSteps(steps)) return
+        y += steps
+        y = remainOrTeleport(y)
     }
 
     fun goUp(steps: Int) {
-        TODO()
+        if (invalidSteps(steps)) return
+        y -= steps
+        y = remainOrTeleport(y)
     }
 
-    fun getLocation(): String = TODO()
+    fun getLocation(): String = "($x,$y)"
 
-    /*TODO*/
+    override fun toString(): String = "Robot(x=$x,y=$y)"
+
+    private fun invalidSteps(steps: Int): Boolean {
+        if (steps < 1) {
+            println("Incorrect input: $steps, the number of steps should be positive.")
+            return true
+        }
+
+        return false
+    }
 }
 
 /*
