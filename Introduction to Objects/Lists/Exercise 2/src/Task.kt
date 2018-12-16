@@ -1,7 +1,15 @@
 package lists2
 
 fun countOccurrences(list: IntList, number: Int): Int {
-    TODO()
+    var count = 0
+
+    for (element in list) {
+        if (element == number) {
+            count++
+        }
+    }
+
+    return count
 }
 
 fun main(args: Array<String>) {
