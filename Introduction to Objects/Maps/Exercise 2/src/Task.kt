@@ -22,7 +22,20 @@ class Cage(private val maxCapacity: Int) {
             }
 
     fun takeHamsterByName(name: String): Hamster {
-        TODO()
+        var indexToRemoveAt = -1
+
+        for ((index, hamster) in hamsters.withIndex()) {
+            if (hamster.name == name) {
+                indexToRemoveAt = index
+                break
+            }
+        }
+
+        if (indexToRemoveAt == -1) {
+            throw NoSuchElementException("No hamster called $name")
+        }
+
+        return hamsters.removeAt(indexToRemoveAt)
     }
 }
 

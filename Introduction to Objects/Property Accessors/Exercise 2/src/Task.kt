@@ -3,9 +3,10 @@ package propertyAccessors2
 import atomictest.eq
 
 class Strange {
+    private var _accesses: Int = 0
 
     val accesses: Int
-        get() = TODO()
+        get() = ++_accesses
 }
 
 fun main(args: Array<String>) {

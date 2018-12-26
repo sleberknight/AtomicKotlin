@@ -1,7 +1,5 @@
 package propertyAccessors1
 
-import atomictest.eq
-
 class Hamster(val name: String) {
     override fun toString(): String {
         return "Hamster('$name')"
@@ -18,7 +16,8 @@ class Cage(private val maxCapacity: Int) {
     val isFull: Boolean
         get() = hamsters.size == maxCapacity
 
-    /*TODO*/
+    val isEmpty: Boolean
+        get() = hamsters.isEmpty()
 
     fun put(hamster: Hamster): Boolean =
             if(isFull)
