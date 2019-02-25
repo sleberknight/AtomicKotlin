@@ -3,7 +3,15 @@ package whenExpressions1
 import atomictest.capture
 import atomictest.eq
 
-fun getCloudinessDescription(cloudiness: Int): String = TODO()
+fun getCloudinessDescription(cloudiness: Int): String =
+        when(cloudiness) {
+            in 0..20 -> "Cloudy"
+            in 21..40 -> "Mostly Cloudy"
+            in 41..60 -> "Partly Sunny"
+            in 61..80 -> "Mostly Sunny"
+            in 81..100 -> "Sunny"
+            else -> throw IllegalArgumentException("Cloudiness value should be between 0 and 100")
+        }
 
 fun main(args: Array<String>) {
     getCloudinessDescription(100) eq "Sunny"

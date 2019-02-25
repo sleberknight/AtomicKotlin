@@ -19,15 +19,15 @@ fun List<Int>.myJoinToString(
 }
 
 fun List<Int>.myJoinToString(separator: String, prefix: String): String {
-    return myJoinToString()
+    return myJoinToString(separator, prefix, postfix = "")
 }
 
 fun List<Int>.myJoinToString(separator: String): String {
-    return myJoinToString()
+    return myJoinToString(separator, prefix = "", postfix = "")
 }
 
 fun List<Int>.myJoinToString(): String {
-    return myJoinToString()
+    return myJoinToString(separator = ", ", prefix = "", postfix = "")
 }
 
 /*
