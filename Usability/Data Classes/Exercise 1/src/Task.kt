@@ -14,5 +14,5 @@ fun main(args: Array<String>) {
     set2.size  // 1 or 2? Write you guess below.
 }
 
-fun getSet1Size(): Int = TODO()
-fun getSet2Size(): Int = TODO()
+fun getSet1Size(): Int = 2
+fun getSet2Size(): Int = 1
