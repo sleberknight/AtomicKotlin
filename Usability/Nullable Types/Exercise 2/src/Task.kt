@@ -1,9 +1,15 @@
 package nullableTypes2
 
 import atomictest.eq
+import java.util.Objects.nonNull
 
 fun countHexadecimalCodes(codes: List<String>): Map<Int, Int> {
-    TODO()
+    return codes
+            .map { it.toIntOrNull(16) }
+            .filter(::nonNull)
+            .map { it!! }
+            .groupingBy { it }
+            .eachCount()
 }
 
 fun main(args: Array<String>) {

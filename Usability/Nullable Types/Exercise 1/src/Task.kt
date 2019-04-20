@@ -21,7 +21,7 @@ class Cage(private val maxCapacity: Int) {
             }
 
     fun takeHamsterByName(name: String): Hamster? =
-            TODO()
+            hamsters[name]
 }
 
 fun main(args: Array<String>) {
