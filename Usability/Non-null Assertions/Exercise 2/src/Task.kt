@@ -1,10 +1,13 @@
 package nonnullAssertions2
 
 import atomictest.eq
-import kotlin.math.absoluteValue
+import kotlin.math.abs
 
 fun maxEqualsMinInAbsoluteValue(list: List<Int>): Boolean {
-    TODO()
+    return when {
+        list.isEmpty() -> false
+        else -> abs(list.min() ?: 0) == abs(list.max() ?: 0)
+    }
 }
 
 fun main(args: Array<String>) {
