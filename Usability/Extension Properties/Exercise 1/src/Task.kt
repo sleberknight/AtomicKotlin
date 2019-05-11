@@ -2,9 +2,11 @@ package extensionProperties1
 
 import atomictest.eq
 
-val <T> List<T>.secondOrNull: T? get() = null
+val <T> List<T>.secondOrNull: T?
+    get() = getOrNull(1)
 
-val <T> List<T>.penultimateOrNull: T? get() = null
+val <T> List<T>.penultimateOrNull: T?
+    get() = getOrNull(size - 2)
 
 fun main(args: Array<String>) {
     val ints = listOf(1, 2, 3)
