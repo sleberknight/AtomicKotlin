@@ -3,10 +3,16 @@ package extensionsforNullableTypes2
 import atomictest.eq
 
 fun Boolean?.and(that: Boolean?): Boolean? =
-        TODO()
+        when {
+            this == null || that == null -> null
+            else -> this && that
+        }
 
 fun Boolean?.or(that: Boolean?): Boolean? =
-        TODO()
+        when {
+            this == null || that == null -> null
+            else -> this || that
+        }
 
 fun main(args: Array<String>) {
     val b = true
