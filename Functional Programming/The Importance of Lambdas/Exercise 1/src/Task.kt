@@ -5,7 +5,7 @@ import atomictest.eq
 class Person(val name: String, val age: Int)
 
 fun List<Person>.getNamesOfAdults(): List<String> {
-    TODO()
+    return filter { it.age > 17 }.map { it.name }
 }
 
 fun main(args: Array<String>) {

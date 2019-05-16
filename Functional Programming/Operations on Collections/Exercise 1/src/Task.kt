@@ -5,7 +5,10 @@ import atomictest.eq
 data class Person(val name: String, val age: Int)
 
 fun findOldest(people: List<Person>, requiredNumber: Int): List<String> {
-    TODO()
+    return people.sortedByDescending(Person::age)
+            .take(requiredNumber)
+            .map(Person::name)
+            .sorted()
 }
 
 fun main(args: Array<String>) {

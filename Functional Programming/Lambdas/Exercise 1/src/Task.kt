@@ -3,7 +3,7 @@ package lambdas1
 import atomictest.eq
 
 fun transform(list: List<String>): List<Int> {
-    return list.map { TODO() }
+    return list.map { it.length }
 }
 
 fun main(args: Array<String>) {

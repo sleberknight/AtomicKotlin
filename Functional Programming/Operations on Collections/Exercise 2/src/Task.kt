@@ -2,7 +2,7 @@ package operationsonCollections2
 
 import atomictest.eq
 
-val operation = { x: Int -> TODO()}
+val operation = { x: Int -> x > 32 }
 
 fun main(args: Array<String>) {
     val first = listOf(1, 5, 32, 45, 70, 511)

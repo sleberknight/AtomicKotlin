@@ -3,7 +3,7 @@ package theImportanceofLambdas2
 import atomictest.eq
 
 fun filterNonBlank(strings: List<String>): List<String> {
-    TODO()
+    return strings.filter { it.isNotBlank() }
 }
 
 fun main(args: Array<String>) {
