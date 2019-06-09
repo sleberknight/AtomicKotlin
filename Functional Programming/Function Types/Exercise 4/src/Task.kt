@@ -1,7 +1,7 @@
 package functionTypes4
 
 fun <A, B, C> ((A) -> B).andThen(action: (B) -> C): (A) -> C =
-        { a: A -> TODO() }
+        { a: A -> action(this(a)) }
 
 fun main(args: Array<String>) {
     val multiply2: (Int) -> Int = { x: Int -> x * 2 }

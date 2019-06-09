@@ -7,7 +7,7 @@ fun List<Int>.transform1(): List<Int> {
 }
 
 fun List<Int>.transform2(): List<Int> {
-    return mapNotNull { TODO() }
+    return mapNotNull { if (it % 2 == 0) it * it else null }
 }
 
 fun main(args: Array<String>) {
