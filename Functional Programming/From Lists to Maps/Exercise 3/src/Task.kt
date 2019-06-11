@@ -3,7 +3,7 @@ package fromListstoMaps03
 import atomictest.eq
 
 fun <T, R> List<T>.associateBy(keySelector: (T) -> R): Map<R, T> =
-        TODO("groupBy(???).???")
+        groupBy(keySelector).mapValues { (_, v) -> v.last() }
 
 data class Person(val name: String, val age: Int)
 

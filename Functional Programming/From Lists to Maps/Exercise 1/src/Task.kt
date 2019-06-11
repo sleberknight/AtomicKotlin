@@ -5,7 +5,10 @@ import atomictest.eq
 data class Person(val name: String, val age: Int)
 
 fun buildAgeToNamesMap(people: List<Person>): Map<Int, List<String>> {
-    TODO()
+    return people.groupBy(Person::age)
+            .mapValues { (_, people) ->
+                people.map(Person::name)
+            }
 }
 
 fun main(args: Array<String>) {

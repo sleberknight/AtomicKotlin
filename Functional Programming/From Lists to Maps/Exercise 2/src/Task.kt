@@ -4,7 +4,10 @@ import atomictest.eq
 
 fun <T, R> List<T>.groupBy(keySelector: (T) -> R): Map<R, List<T>> {
     val result = mutableMapOf<R, MutableList<T>>()
-    TODO()
+    for (e in this) {
+        val group = result.getOrPut(keySelector(e)) { mutableListOf() }
+        group += e
+    }
     return result
 }
 
