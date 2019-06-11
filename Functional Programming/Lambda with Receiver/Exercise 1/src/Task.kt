@@ -3,7 +3,10 @@ package lambdawithReceiver1
 import atomictest.eq
 
 fun drawSquare(width: Int) = buildString {
-    TODO()
+    repeat(width) {
+        val row = "*".repeat(width)
+        appendln(row)
+    }
 }.trim()
 
 fun main(args: Array<String>) {

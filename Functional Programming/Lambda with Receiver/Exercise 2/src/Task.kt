@@ -3,7 +3,9 @@ package lambdawithReceiver2
 import atomictest.eq
 
 fun buildList(action: MutableList<Int>.() -> Unit): List<Int> {
-    TODO()
+    val list = mutableListOf<Int>()
+    list.action()
+    return list
 }
 
 fun main(args: Array<String>) {
