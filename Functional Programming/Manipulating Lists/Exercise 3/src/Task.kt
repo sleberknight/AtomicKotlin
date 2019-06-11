@@ -7,7 +7,13 @@ data class Book(val title: String, val authors: List<Author>)
 data class Author(val name: String)
 
 fun createAuthorToBooksMap(books: List<Book>): Map<Author, List<Book>> {
-    TODO()
+    val authors = books.flatMap { it.authors }.distinct()
+
+    return authors
+            .map { author ->
+                author to books.filter { book -> author in book.authors }
+            }
+            .toMap()
 }
 
 fun main(args: Array<String>) {

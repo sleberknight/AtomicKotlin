@@ -11,7 +11,11 @@ class Person(
 }
 
 fun getFriendSuggestions(person: Person): Set<Person> {
-    TODO()
+    val friendsOfFriends = person.friends
+            .flatMap { friend -> friend.friends }
+            .toSet()
+
+    return friendsOfFriends - person.friends - person
 }
 
 fun main(args: Array<String>) {

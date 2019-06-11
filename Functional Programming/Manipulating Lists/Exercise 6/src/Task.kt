@@ -3,7 +3,7 @@ package manipulatingLists6
 import atomictest.eq
 
 fun <T> List<List<T>>.flatten(): List<T> =
-        flatMap { TODO() }
+        flatMap { inputList -> inputList }
 
 fun main(args: Array<String>) {
     val listOfLists = listOf(listOf(1, 2, 3), listOf(4, 5, 6))
