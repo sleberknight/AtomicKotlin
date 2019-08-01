@@ -11,7 +11,7 @@ class Window(
 )
 
 fun <T, R> with2(receiver: T, block: (T) -> R): R {
-    TODO()
+    return block(receiver)
 }
 
 fun adjustWindow(window: Window) {

@@ -4,7 +4,8 @@ import atomictest.eq
 
 fun buildString(action: StringBuilder.() -> Unit): String =
         with(StringBuilder()) {
-            TODO()
+            action()
+            toString()
         }
 
 fun main(args: Array<String>) {
