@@ -7,13 +7,12 @@ class X {
 }
 
 fun example1(x: X) {
-    
-    x.let {
-        it.first = 1
-        it.second = 2
-        it.third = 3
+    with(x) {
+        first = 1
+        second = 2
+        third = 3
     }
-    
+
 }
 
 class Y {
@@ -22,14 +21,11 @@ class Y {
 }
 
 fun example2(y: Y?) {
-    
-    y?.let {
-        with(it) {
-            start()
-            finish()
-        }
+    y?.run {
+        start()
+        finish()
     }
-    
+
 }
 
 class Z {
@@ -37,12 +33,10 @@ class Z {
 }
 
 fun example3(z: Z) {
-    
-    val result = with(z) {
+    val result = z.apply {
         init()
-        this
     }
-    
+
 }
 
 fun main(args: Array<String>) {

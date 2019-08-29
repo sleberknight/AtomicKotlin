@@ -3,23 +3,25 @@ package libraryHelpers2
 import atomictest.eq
 
 fun <T, R> with(receiver: T, block: T.() -> R): R {
-    TODO()
+    return receiver.block()
 }
 
 fun <T, R> T.run(block: T.() -> R): R {
-    TODO()
+    return block()
 }
 
 fun <T, R> T.let(block: (T) -> R): R {
-    TODO()
+    return block(this)
 }
 
 fun <T> T.apply(block: T.() -> Unit): T {
-    TODO()
+    block()
+    return this
 }
 
 fun <T> T.also(block: (T) -> Unit): T {
-    TODO()
+    block(this)
+    return this
 }
 
 fun main(args: Array<String>) {
