@@ -1,4 +1,7 @@
 package sequences4
 
 fun School.findFavouriteInstructorForStudent(student: Student): Instructor? =
-        TODO()
+        lessons.filter { student in it.students }
+                .groupBy { it.instructor }
+                .maxBy { (_, lessons) -> lessons.size }
+                ?.key
