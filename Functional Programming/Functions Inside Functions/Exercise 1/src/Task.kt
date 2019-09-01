@@ -4,7 +4,7 @@ import atomictest.eq
 
 fun <T> List<T>.find(predicate: (T) -> Boolean): T? {
     forEach {
-        TODO()
+        if (predicate(it)) return it
     }
     return null
 }
